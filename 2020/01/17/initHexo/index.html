@@ -16,12 +16,16 @@
 <meta property="og:site_name" content="ddx个人博客">
 <meta property="og:description" content="第一步：首先安装git、node1依次安装git、node  git下载地址 node下载地址 第二步：安装hexo1利用 npm 命令即可安装，命令：npm install -g hexo  第三步：初始化hexo123在你选择的硬盘下新建hexo文件夹；然后在hexo文件下，右键运行Git Bash，输入命令：hexo init  第四步：在_config.yml,进行基础配置 第五步：本地浏">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yoursite.com/.com//1.png">
-<meta property="article:published_time" content="2020-01-17T07:54:52.241Z">
-<meta property="article:modified_time" content="2020-01-17T07:54:52.241Z">
+<meta property="og:image" content="http://yoursite.com/2020/01/17/initHexo/1.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/17/initHexo/4.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/17/initHexo/2.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/17/initHexo/3.png">
+<meta property="og:image" content="http://yoursite.com/2020/01/17/initHexo/5.png">
+<meta property="article:published_time" content="2020-01-17T08:53:26.426Z">
+<meta property="article:modified_time" content="2020-01-17T08:53:26.426Z">
 <meta property="article:author" content="ddx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/.com//1.png">
+<meta name="twitter:image" content="http://yoursite.com/2020/01/17/initHexo/1.png">
   
     <link rel="alternate" href="/atom.xml" title="ddx个人博客" type="application/atom+xml">
   
@@ -188,7 +192,7 @@
     <div class="article-meta">
       
 	<a href="/2020/01/17/initHexo/" class="article-date">
-	  <time datetime="2020-01-17T07:54:52.241Z" itemprop="datePublished">2020-01-17</time>
+	  <time datetime="2020-01-17T08:53:26.426Z" itemprop="datePublished">2020-01-17</time>
 	</a>
 
       
@@ -210,9 +214,29 @@
 
 <h3 id="第三步：初始化hexo"><a href="#第三步：初始化hexo" class="headerlink" title="第三步：初始化hexo"></a>第三步：初始化hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">在你选择的硬盘下新建hexo文件夹；然后在hexo文件下，右键运行Git Bash，</span><br><span class="line"></span><br><span class="line">输入命令：hexo init</span><br></pre></td></tr></table></figure>
 
-<h3 id="第四步：在-config-yml-进行基础配置"><a href="#第四步：在-config-yml-进行基础配置" class="headerlink" title="第四步：在_config.yml,进行基础配置"></a>第四步：在_config.yml,进行基础配置</h3><p><img src="/.com//1.png" alt="图片上传失败"></p>
+<h3 id="第四步：在-config-yml-进行基础配置"><a href="#第四步：在-config-yml-进行基础配置" class="headerlink" title="第四步：在_config.yml,进行基础配置"></a>第四步：在_config.yml,进行基础配置</h3><p><img src="/2020/01/17/initHexo/1.png" alt="图片"></p>
 <h3 id="第五步：本地浏览博客"><a href="#第五步：本地浏览博客" class="headerlink" title="第五步：本地浏览博客"></a>第五步：本地浏览博客</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git命令：</span><br><span class="line">    hexo g  </span><br><span class="line">    hexo s</span><br></pre></td></tr></table></figure>
 <p>在浏览器输入：localhost：4000 ，就可以进行访问</p>
+<h3 id="第六步：部署到Github上"><a href="#第六步：部署到Github上" class="headerlink" title="第六步：部署到Github上"></a>第六步：部署到Github上</h3><p>1、登录github；</p>
+<p><img src="/2020/01/17/initHexo/4.png" alt="图片"></p>
+<p>2、new repository</p>
+<p><img src="/2020/01/17/initHexo/2.png" alt="图片"><br><img src="/2020/01/17/initHexo/3.png" alt="图片"></p>
+<p>3、在_config.yml进行配置</p>
+<p><img src="/2020/01/17/initHexo/5.png" alt="图片"></p>
+<p>4、 生成SSH添加到GitHub</p>
+<p>打开你的git bash中，</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config 你的用户名</span><br><span class="line">git config 你的邮箱</span><br><span class="line">ssh-keygen -t rsa -C <span class="string">"yourssh"</span></span><br></pre></td></tr></table></figure>
+
+<p>成功生成了.ssh的文件夹。在你的电脑C:\Users\用户.ssh中找到id_rsa.pub这个文件。</p>
+<p>然后在GitHub的settings中，找到SSH and GPG keys的设置选项，点击New SSH key，title随便起一个标题名称；</p>
+<p>把你的id_rsa.pub用记事本的方式打开，里面的信息复制到Key里面去。</p>
+<p>5、把hexo部署到GitHub上</p>
+<p>先安装hexo-deployer-git,就是部署的命令,这样你才能用命令部署到GitHub</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>然后</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>其中 hexo c 清除了你之前生成的东西，也就是hexo clean的缩写;<br>    hexo d 生成静态文章，也就是hexo generate的缩写;<br>    hexo d 部署，也就是hexo deploy的缩写。</p>
+<p>部署成功就可以在http://你的仓库.github.io 这个网站看到你的博客了！！</p>
 
       
     </div>
@@ -281,7 +305,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：首先安装git、node"><span class="nav-number">1.</span> <span class="nav-text">第一步：首先安装git、node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：安装hexo"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：初始化hexo"><span class="nav-number">3.</span> <span class="nav-text">第三步：初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步：在-config-yml-进行基础配置"><span class="nav-number">4.</span> <span class="nav-text">第四步：在_config.yml,进行基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步：本地浏览博客"><span class="nav-number">5.</span> <span class="nav-text">第五步：本地浏览博客</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：首先安装git、node"><span class="nav-number">1.</span> <span class="nav-text">第一步：首先安装git、node</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：安装hexo"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：初始化hexo"><span class="nav-number">3.</span> <span class="nav-text">第三步：初始化hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步：在-config-yml-进行基础配置"><span class="nav-number">4.</span> <span class="nav-text">第四步：在_config.yml,进行基础配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步：本地浏览博客"><span class="nav-number">5.</span> <span class="nav-text">第五步：本地浏览博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步：部署到Github上"><span class="nav-number">6.</span> <span class="nav-text">第六步：部署到Github上</span></a></li></ol>
     
     </div>
   </aside>
