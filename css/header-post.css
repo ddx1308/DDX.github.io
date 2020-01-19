@@ -54,8 +54,8 @@
 	}
 	.hnav {
 		float: none;
-		margin: 80px 0 40px 0;
-		padding: 0 20%;
+		/*margin: 80px 0 40px 0;*/
+		padding: 0 10px;
 	}
 	.container > .navbar-collapse {
 		margin-right: 0px;
