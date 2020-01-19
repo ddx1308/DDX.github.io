@@ -252,7 +252,30 @@
         
       </p>
   </div>
+          <script>
+              function scrollFu() {
+                  if($("html").scrollTop()>100){
+                      $(".intro-navigate").css({
+                          backgroundColor:'rgba(255,255,255,0.2)',
+                          boxShadow:'0 1px 20px rgba(0,0,0,1)'
+                      });
+                  }else{
+                      $(".intro-navigate").css({
+                          backgroundColor:'rgba(255,255,255,0)',
+                          boxShadow:'0 0 0 rgba(0,0,0,0)'
+                      });
+                  }
+              }
+             //给页面绑定滑轮滚动事件
+             if (document.addEventListener) {//firefox
+                 document.addEventListener('DOMMouseScroll', scrollFu, false);
+             }
+             //滚动滑轮触发scrollFunc方法  //ie 谷歌
+             window.onmousewheel = document.onmousewheel = scrollFu;
 
+             $(".navigater-list").children(".main-nav-link").eq(0).addClass('active');
+
+          </script>
 </header>
 
   

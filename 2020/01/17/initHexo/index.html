@@ -169,6 +169,14 @@
     </div>
 
 </header>
+<script>
+    $('header').find('a').each(function () {
+        if (this.href == document.location.href || document.location.href.search(this.href) >= 0) {
+            $(this).parent().addClass('active');
+        }
+    });
+    $(".navbar-nav").children("li").eq(0).removeClass('active');
+</script>
 
 
 
