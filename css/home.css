@@ -203,6 +203,9 @@ h3 {
 #beautifont{
 	/*font-family: Microsoft JhengHei,Roboto,Helvetica,Arial,sans-serif;*/
 }
+#wrap{
+min-height: 0!important;
+}
 canvas {
     top: 0;
     left: 0;
