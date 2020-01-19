@@ -1422,7 +1422,7 @@ a.article-title:hover {
 }
 .toc-fixed {
   position: fixed;
-  top: 30px;
+  top: 100px;
   margin-top: 0;
   max-height: auto;
   overflow: hidden;
