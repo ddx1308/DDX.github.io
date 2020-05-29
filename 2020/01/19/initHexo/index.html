@@ -24,7 +24,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/01/19/initHexo/3.png">
 <meta property="og:image" content="http://yoursite.com/2020/01/19/initHexo/5.png">
 <meta property="article:published_time" content="2020-01-19T04:00:00.000Z">
-<meta property="article:modified_time" content="2020-05-29T01:25:17.919Z">
+<meta property="article:modified_time" content="2020-05-29T02:02:44.239Z">
 <meta property="article:author" content="ddx">
 <meta property="article:tag" content="hexo">
 <meta property="article:tag" content="git">
@@ -245,7 +245,9 @@
 <p>成功生成了.ssh的文件夹。在你的电脑C:\Users\用户.ssh中找到id_rsa.pub这个文件。</p>
 <p>然后在GitHub的settings中，找到SSH and GPG keys的设置选项，点击New SSH key，title随便起一个标题名称；</p>
 <p>把你的id_rsa.pub用记事本的方式打开，里面的信息复制到Key里面去。</p>
-<p>5、把hexo部署到GitHub上</p>
+<p>5、新建博客</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post 文件名</span><br></pre></td></tr></table></figure>
+<p>6、把hexo部署到GitHub上</p>
 <p>先安装hexo-deployer-git,就是部署的命令,这样你才能用命令部署到GitHub</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 <p>然后</p>
